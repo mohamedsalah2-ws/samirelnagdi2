@@ -2,25 +2,9 @@
    PORTFOLIO — script.js
    ============================================================
 
-   ████████████████████████████████████████████████████████████
-   ██                                                        ██
-   ██   HOW TO ADD YOUR MEDIA                                ██
-   ██                                                        ██
-   ██   Edit the GALLERY_DATA object below.                  ██
-   ██   Each folder has an "items" array.                    ██
-   ██                                                        ██
-   ██   For IMAGES:                                          ██
-   ██   { src: "images/gallery/photo.jpg", caption: "..." }  ██
-   ██                                                        ██
-   ██   For VIDEOS:                                          ██
-   ██   { src: "videos/gallery/clip.mp4",  caption: "..." }  ██
-   ██                                                        ██
-   ██   Put your files in:                                   ██
-   ██     images/gallery/   ← for images                    ██
-   ██     videos/gallery/   ← for videos                    ██
-   ██                                                        ██
-   ████████████████████████████████████████████████████████████
 */
+alert('Welcome to my website, I hope you like it.');
+
 
 /* ════════════════════════════════════════════════════════════
    ★  GALLERY DATA — EDIT THIS SECTION TO ADD YOUR MEDIA  ★
@@ -405,5 +389,6 @@ document.addEventListener('DOMContentLoaded', () => {
      INIT
   ════════════════════════════════════════════════════ */
   initGallery();
+
 
 });
