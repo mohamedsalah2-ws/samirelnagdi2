@@ -2,13 +2,13 @@
    PORTFOLIO — script.js
    ============================================================
 
-*/
-alert('Welcome to my website 😊, I hope you like it.');
-
 
 /* ════════════════════════════════════════════════════════════
    ★  GALLERY DATA — EDIT THIS SECTION TO ADD YOUR MEDIA  ★
    ════════════════════════════════════════════════════════════ */
+
+
+
 
 const GALLERY_DATA = {
 
@@ -81,11 +81,66 @@ const GALLERY_DATA = {
 
 };
 
+   
+
+const TW_CONFIG = {
+  fullText:      'SAMIR ELNAGDI',   
+  highlightWord: 'ELNAGDI',             
+  typeSpeed:     800,                   
+  startDelay:    600,                  
+};
+
 /* ════════════════════════════════════════════════════════════
-   DO NOT EDIT BELOW THIS LINE UNLESS YOU KNOW WHAT YOU'RE DOING
+   TYPEWRITER ENGINE — لا تعدل من هنا
    ════════════════════════════════════════════════════════════ */
+function initTypewriter() {
+  const textEl   = document.getElementById('typewriter-text');
+  const cursor   = document.getElementById('typewriter-cursor');
+  if (!textEl || !cursor) return;
+
+  const { fullText, highlightWord, typeSpeed, startDelay } = TW_CONFIG;
+  let index = 0;
+
+  function renderText(str) {
+    if (highlightWord && str.includes(highlightWord)) {
+      // نقسّم النص على الكلمة المهايتة
+      const parts = str.split(highlightWord);
+      // الجزء قبل + الجزء المهايت (اللي اتكتب منه لحد الآن)
+      const beforeHL = parts[0];
+      const inHL     = highlightWord.slice(
+        0,
+        str.length - beforeHL.length
+      );
+      textEl.innerHTML =
+        beforeHL +
+        `<span class="highlight">${inHL}</span>`;
+    } else {
+      textEl.textContent = str;
+    }
+  }
+
+  function type() {
+    index++;
+    renderText(fullText.slice(0, index));
+
+    if (index < fullText.length) {
+      setTimeout(type, typeSpeed);
+    } else {
+      // انتهى — خلي الكيرسور يومض بطيء
+      cursor.style.animationDuration = '1.2s';
+    }
+  }
+
+  setTimeout(type, startDelay);
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  /* ════════════════════════════════════════════════════
+     TYPEWRITER
+  ════════════════════════════════════════════════════ */
+  initTypewriter();
 
   /* ════════════════════════════════════════════════════
      TABS
@@ -383,13 +438,9 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('mouseleave', () => { v.pause(); v.currentTime = 0; });
   });
 
-  
-
   /* ════════════════════════════════════════════════════
      INIT
   ════════════════════════════════════════════════════ */
   initGallery();
 
-
 });
-
