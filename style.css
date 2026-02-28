@@ -950,3 +950,20 @@ footer { background:var(--surface); border-top:1px solid var(--border); padding:
 
 
 }
+
+
+/* ── TYPEWRITER CURSOR ──────────────────────────────────── */
+.typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 0.82em;
+  background: var(--accent1);
+  border-radius: 2px;
+  margin-right: 4px;
+  vertical-align: middle;
+  animation: cursorBlink 0.7s step-end infinite;
+}
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
