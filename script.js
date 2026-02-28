@@ -3,7 +3,7 @@
    ============================================================
 
 */
-alert('Welcome to my website, I hope you like it.');
+alert('Welcome to my website 😊, I hope you like it.');
 
 
 /* ════════════════════════════════════════════════════════════
@@ -392,3 +392,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 });
+
