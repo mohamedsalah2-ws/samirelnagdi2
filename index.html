@@ -479,13 +479,6 @@
       </div>
     </div>
 
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-      <button class="lb-close" id="lbClose">✕</button>
-      <button class="lb-prev" id="lbPrev">‹</button>
-      <button class="lb-next" id="lbNext">›</button>
-      <div class="lb-wrap"><img id="lbImg" src="" alt="" /></div>
-      <div class="lb-cap" id="lbCaption"></div>
     </div>
   </section>
 
@@ -561,7 +554,16 @@
     </div>
   </footer>
 
-  
+ 
+
+  <!-- Lightbox — direct child of body -->
+  <div class="lightbox" id="lightbox">
+    <button class="lb-close" id="lbClose">✕</button>
+    <button class="lb-prev" id="lbPrev">‹</button>
+    <button class="lb-next" id="lbNext">›</button>
+    <div class="lb-wrap"><img id="lbImg" src="" alt="" /></div>
+    <div class="lb-cap" id="lbCaption"></div>
+  </div>
 
   <!-- Gallery Overlay — direct child of body -->
   <div class="gallery-overlay" id="galleryOverlay">
