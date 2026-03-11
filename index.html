@@ -479,25 +479,6 @@
       </div>
     </div>
 
-    <!-- Gallery Overlay -->
-    <div class="gallery-overlay" id="galleryOverlay">
-      <div class="go-inner">
-        <div class="go-header">
-          <div class="go-title-wrap">
-            <span class="go-title" id="galleryOverlayTitle"></span>
-            <span class="go-badge" id="galleryOverlayBadge"></span>
-          </div>
-          <button class="go-close" id="galleryOverlayClose">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-          </button>
-        </div>
-        <div class="go-empty" id="galleryEmpty">
-          <span>📂</span><p>This folder is empty</p>
-        </div>
-        <div class="go-grid" id="galleryOverlayGrid"></div>
-      </div>
-    </div>
-
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
       <button class="lb-close" id="lbClose">✕</button>
@@ -581,6 +562,23 @@
   </footer>
 
   
+
+  <!-- Gallery Overlay — direct child of body -->
+  <div class="gallery-overlay" id="galleryOverlay">
+    <button class="go-close" id="galleryOverlayClose">✕</button>
+    <div class="go-inner">
+      <div class="go-header">
+        <div class="go-title-wrap">
+          <span class="go-title" id="galleryOverlayTitle"></span>
+          <span class="go-badge" id="galleryOverlayBadge"></span>
+        </div>
+      </div>
+      <div class="go-empty" id="galleryEmpty">
+        <span>📂</span><p>This folder is empty</p>
+      </div>
+      <div class="go-grid" id="galleryOverlayGrid"></div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
