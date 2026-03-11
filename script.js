@@ -1,7 +1,8 @@
 /* ============================================================
    SAMIR ELNAGDI PORTFOLIO — script.js
-   ============================================================
-*/
+   ============================================================*/
+
+
 
 /* ════════════════════════════════════════════════════════
    ★  GALLERY DATA — EDIT THIS TO ADD YOUR MEDIA  ★
@@ -436,12 +437,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('lbClose')?.addEventListener('click', closeLightbox);
   document.getElementById('lightbox')?.addEventListener('click', e => {
-    if (e.target.id === 'lightbox') closeLightbox();
+    if (!e.target.closest('#lbPrev') && !e.target.closest('#lbNext') && !e.target.closest('.lb-wrap')) {
+      closeLightbox();
+    }
   });
-  document.getElementById('lbPrev')?.addEventListener('click', () => {
+  document.getElementById('lbPrev')?.addEventListener('click', e => {
+    e.stopPropagation();
     lbIndex = (lbIndex - 1 + currentItems.length) % currentItems.length; showLb();
   });
-  document.getElementById('lbNext')?.addEventListener('click', () => {
+  document.getElementById('lbNext')?.addEventListener('click', e => {
+    e.stopPropagation();
     lbIndex = (lbIndex + 1) % currentItems.length; showLb();
   });
   document.addEventListener('keydown', e => {
