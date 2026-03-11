@@ -3,643 +3,584 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SAMIR ELNAGDI | Portfolio</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2300e5ff'/%3E%3Cstop offset='100%25' stop-color='%237c4dff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='25' fill='%230d0d14' stroke='url(%23g)' stroke-width='6'/%3E%3Ctext x='50' y='72' font-family='sans-serif' font-weight='900' font-size='65' fill='url(%23g)' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+  <title>SAMIR ELNAGDI — Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2300f2ea'/%3E%3Cstop offset='100%25' stop-color='%239b59ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='%2307070f'/%3E%3Crect x='3' y='3' width='94' height='94' rx='20' fill='none' stroke='url(%23g)' stroke-width='4'/%3E%3Ctext x='50' y='68' font-family='Arial Black,sans-serif' font-weight='900' font-size='58' fill='url(%23g)' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=sans-serif:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2300f2ea'/%3E%3Cstop offset='100%25' stop-color='%239b59ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='%2307070f'/%3E%3Ctext x='50' y='68' font-family='sans-serif' font-weight='900' font-size='58' fill='url(%23g)' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="style.css">
 </head>
-
-
 <body>
 
-  <div class="cursor-glow" id="cursorGlow"></div>
+  <!-- Animated bg canvas -->
+  <canvas id="bgCanvas"></canvas>
 
-  <!-- NAV -->
-  <nav>
-    <div class="logo">SAMIR ELNAGDI</div>
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- ══ NAV ══════════════════════════════════════════ -->
+  <nav id="mainNav">
+    <a href="#home" class="nav-logo">
+      <span class="logo-bracket">[</span>SE<span class="logo-bracket">]</span>
+    </a>
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
+      <li><a href="#experience">Journey</a></li>
       <li><a href="#projects">Work</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+    <a href="#contact" class="nav-cta">Hire Me</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <!-- mobile drawer -->
+  <!-- Mobile drawer -->
   <div class="nav-drawer" id="navDrawer">
-    <a href="#home"         class="drawer-link">Home</a>
-    <a href="#skills"       class="drawer-link">Skills</a>
-    <a href="#experience"   class="drawer-link">Experience</a>
-    <a href="#projects"     class="drawer-link">Work</a>
-    <a href="#gallery"      class="drawer-link">Gallery</a>
-    <a href="#contact"      class="drawer-link">Contact</a>
+    <a href="#home"       class="drawer-link">Home</a>
+    <a href="#skills"     class="drawer-link">Skills</a>
+    <a href="#experience" class="drawer-link">Journey</a>
+    <a href="#projects"   class="drawer-link">Work</a>
+    <a href="#gallery"    class="drawer-link">Gallery</a>
+    <a href="#contact"    class="drawer-link">Contact</a>
   </div>
   <div class="nav-overlay" id="navOverlay"></div>
 
-  <!-- ══════════════════════════════════════════
-       HERO
-  ══════════════════════════════════════════════ -->
+
+  <!-- ══ HERO ══════════════════════════════════════════ -->
   <section class="hero" id="home">
-    <div class="orb orb1"></div>
-    <div class="orb orb2"></div>
-    <div class="orb orb3"></div>
 
-    <!-- LEFT: text -->
-    <div class="hero-content">
-      <div class="hero-badge">Available for work</div>
+    <div class="hero-bg-glow g1"></div>
+    <div class="hero-bg-glow g2"></div>
+    <div class="hero-bg-glow g3"></div>
 
-      
-      <h1 class="hero-name">
-  <span id="typewriter-cursor" class="typewriter-cursor"></span>
-  <span id="typewriter-text"></span>
-</h1>
-
-      <p class="hero-title">CPA · Graphic Design · Video Editing · IT · AI</p>
-
-      <p class="hero-desc">
-        A multi-skilled professional blending accounting precision, creative design,
-        and cutting-edge AI. I turn data into decisions, ideas into stunning visuals,
-        and complexity into elegant solutions.
-      </p>
-
-      <div class="hero-cta">
-        <a href="#projects" class="btn-primary">View My Work</a>
-        <a href="#contact"  class="btn-outline">Get in Touch</a>
-      </div>
-    </div>
-
-    <!-- RIGHT: Masonry gallery (3 flex columns) -->
-    <!-- RIGHT: Single Animated Hero Image -->
-    <div class="hero-visual">
-
-      <!-- Floating rings -->
-      <div class="hv-ring hv-ring1"></div>
-      <div class="hv-ring hv-ring2"></div>
-      <div class="hv-ring hv-ring3"></div>
-
-      <!-- Main image frame -->
-      <div class="hv-frame">
-        <div class="hv-img-wrap">
-          <img src="images/project2.jpg" alt="Samir Elnagdi" class="hv-img" />
-          <div class="hv-img-shine"></div>
+    <div class="hero-inner hero-centered">
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-dot"></span>
+          Available for work
         </div>
 
-        <!-- Dot grid decoration -->
-        <div class="hv-dots"></div>
+        <h1 class="hero-headline">
+          <span class="line-wrap"><span class="line-in">SAMIR <span class="grad-word">ELNAGDI</span></span></span>
+        </h1>
+
+        <div class="hero-roles">
+          <span class="role active" data-role="CPA & Accountant">CPA & Accountant</span>
+          <span class="role-sep">·</span>
+          <span class="role" data-role="Graphic Designer">Graphic Designer</span>
+          <span class="role-sep">·</span>
+          <span class="role" data-role="Video Editor">Video Editor</span>
+          <span class="role-sep">·</span>
+          <span class="role" data-role="AI Specialist">AI Specialist</span>
+          <span class="role-sep">·</span>
+          <span class="role" data-role="IT Expert">IT Expert</span>
+        </div>
+
+        <p class="hero-desc">
+          A multi-skilled professional merging <em>accounting precision</em>, 
+          <em>creative direction</em>, and <em>generative AI</em> — 
+          turning complex data into elegant decisions and raw ideas into stunning visuals.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">
+            <span>View My Work</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#contact" class="btn-ghost">Get in Touch</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hstat">
+            <span class="hstat-num" data-target="5">0</span>
+            <span class="hstat-label">Yrs Exp</span>
+          </div>
+          <div class="hstat-divider"></div>
+          <div class="hstat">
+            <span class="hstat-num" data-target="50">0</span>
+            <span class="hstat-label">Projects</span>
+          </div>
+          <div class="hstat-divider"></div>
+          <div class="hstat">
+            <span class="hstat-num" data-target="30">0</span>
+            <span class="hstat-label">Clients</span>
+          </div>
+        </div>
       </div>
 
+
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-hint">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
     </div>
   </section>
 
-  <!-- STATS BAR -->
-  <div class="stats-bar">
-    <div class="stat-item">
-      <div class="stat-num" data-target="5">0</div>
-      <div class="stat-label">Years of Experience</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num" data-target="50">0</div>
-      <div class="stat-label">Projects Delivered</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num" data-target="5">0</div>
-      <div class="stat-label">Specializations</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num" data-target="30">0</div>
-      <div class="stat-label">Happy Clients</div>
+  <!-- ══ MARQUEE ═══════════════════════════════════════ -->
+  <div class="marquee-bar">
+    <div class="marquee-track">
+      <span>CPA</span><span class="mq-dot">★</span>
+      <span>Graphic Design</span><span class="mq-dot">★</span>
+      <span>Video Editing</span><span class="mq-dot">★</span>
+      <span>AI & Prompt Engineering</span><span class="mq-dot">★</span>
+      <span>IT & Networking</span><span class="mq-dot">★</span>
+      <span>Midjourney</span><span class="mq-dot">★</span>
+      <span>After Effects</span><span class="mq-dot">★</span>
+      <span>Power BI</span><span class="mq-dot">★</span>
+      <span>Runway ML</span><span class="mq-dot">★</span>
+      <span>Photoshop</span><span class="mq-dot">★</span>
+      <!-- duplicate for seamless loop -->
+      <span>CPA</span><span class="mq-dot">★</span>
+      <span>Graphic Design</span><span class="mq-dot">★</span>
+      <span>Video Editing</span><span class="mq-dot">★</span>
+      <span>AI & Prompt Engineering</span><span class="mq-dot">★</span>
+      <span>IT & Networking</span><span class="mq-dot">★</span>
+      <span>Midjourney</span><span class="mq-dot">★</span>
+      <span>After Effects</span><span class="mq-dot">★</span>
+      <span>Power BI</span><span class="mq-dot">★</span>
+      <span>Runway ML</span><span class="mq-dot">★</span>
+      <span>Photoshop</span><span class="mq-dot">★</span>
     </div>
   </div>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="section-header reveal">
-      <div class="section-tag">// Expertise</div>
-      <h2 class="section-title">My Skills &amp; <span>Specializations</span></h2>
-    </div>
-    <div class="bento-grid reveal">
-      <div class="bento-card bento-ai bento-large">
-        <div class="bento-glow"></div>
-        <div class="bento-icon-wrap"><span class="bento-icon">🤖</span></div>
-        <div class="bento-body">
-          <div class="bento-name">Generative AI</div>
-          <div class="bento-sub">Prompt Engineering</div>
-          <p class="bento-desc">Cinematic AI director — crafting high-quality images &amp; videos through precision prompting. Lighting, composition, motion, mood. Arabic content included.</p>
-          <div class="bento-tags">
-            <span class="btag">Midjourney</span>
-            <span class="btag">Runway ML</span>
-            <span class="btag">Sora</span>
-            <span class="btag">Kling AI</span>
-            <span class="btag">Pika Labs</span>
-            <span class="btag">Storyboarding</span>
+
+  <!-- ══ SKILLS ════════════════════════════════════════ -->
+  <section id="skills" class="section-skills">
+    <div class="container">
+      <div class="section-label reveal">// 01 — Expertise</div>
+      <h2 class="section-heading reveal">My <span>Skills</span> &amp;<br>Specializations</h2>
+
+      <div class="skills-grid">
+
+        <div class="sk-card sk-ai reveal">
+          <div class="sk-glow"></div>
+          <div class="sk-top"><div class="sk-num">01</div><div class="sk-icon">🤖</div></div>
+          <div class="sk-body">
+            <h3 class="sk-title">Generative AI</h3>
+            <p class="sk-sub">Prompt Engineering & AI Direction</p>
+            <p class="sk-desc">Cinematic AI director — crafting high-quality images & videos through precision prompting. Lighting, composition, motion, mood.</p>
+          </div>
+          <div class="sk-tags">
+            <span>Midjourney</span><span>Runway ML</span><span>Sora</span>
+            <span>Kling AI</span><span>Pika Labs</span><span>Storyboarding</span>
           </div>
         </div>
-        <div class="bento-number">01</div>
-      </div>
-      <div class="bento-card bento-account bento-medium">
-        <div class="bento-glow"></div>
-        <div class="bento-icon-wrap"><span class="bento-icon">📊</span></div>
-        <div class="bento-body">
-          <div class="bento-name">CPA &amp; Accounting</div>
-          <p class="bento-desc">Financial reporting, tax planning, auditing &amp; data-driven analysis.</p>
-          <div class="bento-tags">
-            <span class="btag">CPA</span>
-            <span class="btag">QuickBooks</span>
-            <span class="btag">Excel</span>
-            <span class="btag">Power BI</span>
-            <span class="btag">Tax</span>
-            <span class="btag">Audit</span>
+
+        <div class="sk-card sk-account reveal">
+          <div class="sk-glow"></div>
+          <div class="sk-top"><div class="sk-num">02</div><div class="sk-icon">📊</div></div>
+          <div class="sk-body">
+            <h3 class="sk-title">CPA & Accounting</h3>
+            <p class="sk-sub">Financial Analysis & Reporting</p>
+            <p class="sk-desc">Financial reporting, tax planning, auditing & data-driven analysis for businesses of all sizes.</p>
+          </div>
+          <div class="sk-tags">
+            <span>CPA</span><span>QuickBooks</span><span>Excel</span>
+            <span>Power BI</span><span>Tax</span><span>Audit</span>
           </div>
         </div>
-        <div class="bento-number">02</div>
-      </div>
-      <div class="bento-card bento-it bento-small">
-        <div class="bento-glow"></div>
-        <div class="bento-icon-wrap"><span class="bento-icon">💻</span></div>
-        <div class="bento-body">
-          <div class="bento-name">IT &amp; Networks</div>
-          <div class="bento-tags">
-            <span class="btag">Networking</span>
-            <span class="btag">Win Server</span>
-            <span class="btag">Cybersecurity</span>
-            <span class="btag">Cloud</span>
+
+        <div class="sk-card sk-design reveal">
+          <div class="sk-glow"></div>
+          <div class="sk-top"><div class="sk-num">03</div><div class="sk-icon">🎨</div></div>
+          <div class="sk-body">
+            <h3 class="sk-title">Graphic Design</h3>
+            <p class="sk-sub">Visual Identity & Branding</p>
+            <p class="sk-desc">Visual identity, brand design & marketing materials that capture attention and communicate clearly.</p>
+          </div>
+          <div class="sk-tags">
+            <span>Photoshop</span><span>Illustrator</span><span>InDesign</span><span>Branding</span><span>Typography</span>
           </div>
         </div>
-        <div class="bento-number">04</div>
-      </div>
-      <div class="bento-card bento-design bento-medium">
-        <div class="bento-glow"></div>
-        <div class="bento-icon-wrap"><span class="bento-icon">🎨</span></div>
-        <div class="bento-body">
-          <div class="bento-name">Graphic Design</div>
-          <p class="bento-desc">Visual identity, brand design &amp; marketing materials that capture attention.</p>
-          <div class="bento-tags">
-            <span class="btag">Photoshop</span>
-            <span class="btag">Illustrator</span>
-            <span class="btag">InDesign</span>
-            <span class="btag">Branding</span>
-            <span class="btag">Typography</span>
+
+        <div class="sk-card sk-video reveal">
+          <div class="sk-glow"></div>
+          <div class="sk-top"><div class="sk-num">04</div><div class="sk-icon">🎬</div></div>
+          <div class="sk-body">
+            <h3 class="sk-title">Video Editing</h3>
+            <p class="sk-sub">Cinematic Production</p>
+            <p class="sk-desc">Promo reels to cinematic films — polished content that drives engagement across platforms.</p>
+          </div>
+          <div class="sk-tags">
+            <span>Premiere Pro</span><span>After Effects</span><span>DaVinci</span><span>Color Grading</span>
           </div>
         </div>
-        <div class="bento-number">03</div>
-      </div>
-      <div class="bento-card bento-montage bento-medium">
-        <div class="bento-glow"></div>
-        <div class="bento-icon-wrap"><span class="bento-icon">🎬</span></div>
-        <div class="bento-body">
-          <div class="bento-name">Video Editing</div>
-          <p class="bento-desc">Promo reels to cinematic films — polished content that drives engagement.</p>
-          <div class="bento-tags">
-            <span class="btag">Premiere Pro</span>
-            <span class="btag">After Effects</span>
-            <span class="btag">DaVinci</span>
-            <span class="btag">Color Grading</span>
+
+        <div class="sk-card sk-it reveal">
+          <div class="sk-glow"></div>
+          <div class="sk-top"><div class="sk-num">05</div><div class="sk-icon">💻</div></div>
+          <div class="sk-body">
+            <h3 class="sk-title">IT & Networks</h3>
+            <p class="sk-sub">Systems & Cybersecurity</p>
+            <p class="sk-desc">Systems architecture, cybersecurity & cloud solutions for companies of all scales.</p>
+          </div>
+          <div class="sk-tags">
+            <span>Networking</span><span>Win Server</span><span>Cybersecurity</span><span>Cloud</span>
           </div>
         </div>
-        <div class="bento-number">05</div>
+
       </div>
     </div>
   </section>
 
-  <!-- EXPERIENCE TIMELINE -->
-  <section id="experience">
-    <div class="section-header reveal">
-      <div class="section-tag">// Timeline</div>
-      <h2 class="section-title">My Professional <span>Journey</span></h2>
-    </div>
-    <div class="timeline">
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-role">AI Specialist &amp; Content Creator</div>
-          <div class="timeline-company">Freelance</div>
-          <div class="timeline-text">Leveraging AI tools to produce digital content and automation solutions for clients across various industries.</div>
+
+  <!-- ══ EXPERIENCE ════════════════════════════════════ -->
+  <section id="experience" class="section-experience">
+    <div class="container">
+      <div class="section-label reveal">// 02 — Timeline</div>
+      <h2 class="section-heading reveal">Professional <span>Journey</span></h2>
+
+      <div class="timeline-grid">
+
+        <div class="tl-item reveal">
+          <div class="tl-year">2023 —</div>
+          <div class="tl-card">
+            <div class="tl-card-accent"></div>
+            <div class="tl-role">AI Specialist & Content Creator</div>
+            <div class="tl-company">Freelance</div>
+            <p class="tl-desc">Leveraging AI tools to produce digital content and automation solutions for clients across various industries.</p>
+            <div class="tl-tags"><span>AI</span><span>Content</span><span>Automation</span></div>
+          </div>
         </div>
-      </div>
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-role">IT Technician &amp; Support</div>
-          <div class="timeline-company"> Name</div>
-          <div class="timeline-text">Managed networks and systems, provided technical support, and resolved issues across 50+ workstations.</div>
+
+        <div class="tl-item reveal">
+          <div class="tl-year">2022 —</div>
+          <div class="tl-card">
+            <div class="tl-card-accent" style="background:var(--v);"></div>
+            <div class="tl-role">IT Technician & Support</div>
+            <div class="tl-company">Company Name</div>
+            <p class="tl-desc">Managed networks and systems, provided technical support, and resolved issues across 50+ workstations.</p>
+            <div class="tl-tags"><span>IT</span><span>Networks</span><span>Support</span></div>
+          </div>
         </div>
-      </div>
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-role">Graphic Designer &amp; Video Editor</div>
-          <div class="timeline-company"> Name</div>
-          <div class="timeline-text">Designed visual identities and marketing materials; produced promotional and corporate video content.</div>
+
+        <div class="tl-item reveal">
+          <div class="tl-year">2021 —</div>
+          <div class="tl-card">
+            <div class="tl-card-accent" style="background:var(--o);"></div>
+            <div class="tl-role">Graphic Designer & Video Editor</div>
+            <div class="tl-company">Company Name</div>
+            <p class="tl-desc">Designed visual identities and marketing materials; produced promotional and corporate video content.</p>
+            <div class="tl-tags"><span>Design</span><span>Video</span><span>Branding</span></div>
+          </div>
         </div>
-      </div>
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="timeline-role">Accountant</div>
-          <div class="timeline-company"> Name</div>
-          <div class="timeline-text">Prepared financial statements and accounting reports; managed client and vendor accounts.</div>
+
+        <div class="tl-item reveal">
+          <div class="tl-year">2019 —</div>
+          <div class="tl-card">
+            <div class="tl-card-accent" style="background:var(--g);"></div>
+            <div class="tl-role">Accountant</div>
+            <div class="tl-company">Company Name</div>
+            <p class="tl-desc">Prepared financial statements and accounting reports; managed client and vendor accounts.</p>
+            <div class="tl-tags"><span>CPA</span><span>Finance</span><span>Audit</span></div>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
- <!-- ══════════════════════════════════════════
-       PROJECTS
-  ══════════════════════════════════════════════ -->
-  <section id="projects">
-    <div class="section-header reveal">
-      <div class="section-tag">// Work</div>
-      <h2 class="section-title">Featured <span>Projects</span></h2>
-    </div>
 
-    <div class="projects-grid">
+  <!-- ══ PROJECTS ══════════════════════════════════════ -->
+  <section id="projects" class="section-projects">
+    <div class="container">
+      <div class="section-label reveal">// 03 — Work</div>
+      <h2 class="section-heading reveal">Featured <span>Projects</span></h2>
 
-      <div class="project-card reveal">
-        <div class="project-thumb t1">
-          <img src="images/project1.jpg" alt="Cinematic AI Project" />
+      <div class="projects-grid">
+
+        <div class="pj-card reveal">
+          <div class="pj-img-wrap">
+            <img src="images/project1.jpg" alt="Cinematic AI Project" />
+            <div class="pj-img-tint"></div>
+          </div>
+          <div class="pj-body">
+            <div class="pj-cat cat-ai">Generative Media</div>
+            <h3 class="pj-title">Cinematic AI Video Production</h3>
+            <p class="pj-desc">Directed and generated a high-fidelity cinematic sequence using advanced AI models. Focused on precise prompt engineering for lighting, composition, and consistent character design.</p>
+            <div class="pj-footer">
+              <div class="pj-tags"><span>Runway ML</span><span>Midjourney</span><span>Sora</span></div>
+              <a href="#" class="pj-link">View →</a>
+            </div>
+          </div>
         </div>
-        <div class="project-body">
-          <div class="project-category cat-ai">Generative Media</div>
-          <div class="project-title">Cinematic Video Production</div>
-          <p class="project-desc">
-            Directed and generated a high-fidelity cinematic sequence using advanced AI models. Focused on precise prompt engineering for lighting, composition, and consistent character design.
-          </p>
+
+        <div class="pj-card reveal">
+          <div class="pj-img-wrap">
+            <img src="images/project2.jpg" alt="Financial Dashboard" />
+            <div class="pj-img-tint" style="background:linear-gradient(to top,#0a1a0a,transparent 60%)"></div>
+          </div>
+          <div class="pj-body">
+            <div class="pj-cat cat-account">Financial</div>
+            <h3 class="pj-title">Financial Analysis Dashboard</h3>
+            <p class="pj-desc">Excel / Power BI dashboard tracking key financial performance indicators and business metrics.</p>
+            <div class="pj-footer">
+              <div class="pj-tags"><span>Excel</span><span>Power BI</span></div>
+              <a href="#" class="pj-link">View →</a>
+            </div>
+          </div>
         </div>
+
+        <div class="pj-card reveal">
+          <div class="pj-img-wrap">
+            <img src="images/project1.jpg" alt="Brand Identity" />
+            <div class="pj-img-tint" style="background:linear-gradient(to top,#1a0d05,transparent 60%)"></div>
+          </div>
+          <div class="pj-body">
+            <div class="pj-cat cat-design">Design</div>
+            <h3 class="pj-title">Full Brand Identity</h3>
+            <p class="pj-desc">Comprehensive visual identity including logo, color system, and complete marketing collateral.</p>
+            <div class="pj-footer">
+              <div class="pj-tags"><span>Illustrator</span><span>InDesign</span></div>
+              <a href="#" class="pj-link">View →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pj-card reveal">
+          <div class="pj-img-wrap">
+            <img src="images/project1.jpg" alt="Network Setup" />
+            <div class="pj-img-tint" style="background:linear-gradient(to top,#05051a,transparent 60%)"></div>
+          </div>
+          <div class="pj-body">
+            <div class="pj-cat cat-it">IT</div>
+            <h3 class="pj-title">Corporate Network Setup</h3>
+            <p class="pj-desc">Designed and deployed a secure network infrastructure for a company with 50+ employees.</p>
+            <div class="pj-footer">
+              <div class="pj-tags"><span>Networking</span><span>Security</span></div>
+              <a href="#" class="pj-link">View →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pj-card reveal">
+          <div class="pj-img-wrap">
+            <img src="images/project2.jpg" alt="Promo Video" />
+            <div class="pj-img-tint" style="background:linear-gradient(to top,#1a1005,transparent 60%)"></div>
+          </div>
+          <div class="pj-body">
+            <div class="pj-cat cat-video">Montage</div>
+            <h3 class="pj-title">Promotional Video</h3>
+            <p class="pj-desc">Professional promotional video that achieved 100k+ views across social media platforms.</p>
+            <div class="pj-footer">
+              <div class="pj-tags"><span>Premiere Pro</span><span>After Effects</span></div>
+              <a href="#" class="pj-link">View →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pj-card reveal">
+          <div class="pj-img-wrap">
+            <img src="images/project1.jpg" alt="AI Design Pipeline" />
+            <div class="pj-img-tint"></div>
+          </div>
+          <div class="pj-body">
+            <div class="pj-cat cat-ai">AI + Design</div>
+            <h3 class="pj-title">AI Visual Content Pipeline</h3>
+            <p class="pj-desc">A pipeline combining AI and graphic design to produce high-quality visual content at scale.</p>
+            <div class="pj-footer">
+              <div class="pj-tags"><span>Midjourney</span><span>Photoshop</span></div>
+              <a href="#" class="pj-link">View →</a>
+            </div>
+          </div>
+        </div>
+
       </div>
-
-      <div class="project-card reveal">
-        <div class="project-thumb t2">
-          <img src="images/project2.jpg" alt="Cinematic AI Project" />
-        </div>
-        <div class="project-body">
-          <div class="project-category cat-account">Financial</div>
-          <div class="project-title">Financial Analysis Dashboard</div>
-          <p class="project-desc">
-            An Excel / Power BI dashboard tracking key financial
-            performance indicators and business metrics.
-          </p>
-        </div>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-thumb t3">
-          <img src="images/project1.jpg" alt="Cinematic AI Project" />
-        </div>
-        <div class="project-body">
-          <div class="project-category cat-design">Design</div>
-          <div class="project-title">Full Brand Identity</div>
-          <p class="project-desc">
-            Comprehensive visual identity including logo, color system,
-            and complete marketing collateral.
-          </p>
-        </div>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-thumb t4">
-          <img src="images/project1.jpg" alt="Cinematic AI Project" />
-        </div>
-        <div class="project-body">
-          <div class="project-category cat-it">IT</div>
-          <div class="project-title">Corporate Network Setup</div>
-          <p class="project-desc">
-            Designed and deployed a secure network infrastructure for a
-            company with 50+ employees, including a backup system.
-          </p>
-        </div>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-thumb t5">
-          <img src="images/project2.jpg" alt="Cinematic AI Project" />
-        </div>
-        <div class="project-body">
-          <div class="project-category cat-design">Montage</div>
-          <div class="project-title">Promotional Video — Client Name</div>
-          <p class="project-desc">
-            Professional promotional video that achieved 100k+ views
-            across social media platforms.
-          </p>
-        </div>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-thumb t6">
-          <img src="images/project1.jpg" alt="Cinematic AI Project" />
-        </div>
-        <div class="project-body">
-          <div class="project-category cat-ai">AI + Design</div>
-          <div class="project-title">AI Visual Content Generation</div>
-          <p class="project-desc">
-            A pipeline combining AI and graphic design to produce
-            high-quality visual content at scale and speed.
-          </p>
-        </div>
-      </div>
-
     </div>
   </section>
 
-   <!-- ══════════════════════════════════════════
-       UNIFIED GALLERY
-  ══════════════════════════════════════════════ -->
-  <section id="gallery" class="gallery-section">
 
-    <div class="section-header reveal">
-      <div class="section-tag">// Portfolio</div>
-      <h2 class="section-title">My <span>Gallery</span></h2>
-      <p class="section-sub">Click any folder to browse the work</p>
-    </div>
+  <!-- ══ GALLERY ═══════════════════════════════════════ -->
+  <section id="gallery" class="section-gallery">
+    <div class="container">
+      <div class="section-label reveal">// 04 — Portfolio</div>
+      <h2 class="section-heading reveal">My <span>Gallery</span></h2>
 
-    <!-- TABS -->
-    <div class="gallery-tabs reveal">
-      <button class="gtab active" data-tab="images">
-        <span class="gtab-icon">🖼</span>
-        <span class="gtab-label">Images</span>
-        <span class="gtab-count" id="tabCountImages">0</span>
-      </button>
-      <button class="gtab" data-tab="videos">
-        <span class="gtab-icon">🎬</span>
-        <span class="gtab-label">Videos</span>
-        <span class="gtab-count" id="tabCountVideos">0</span>
-      </button>
-    </div>
+      <div class="gallery-tabs reveal">
+        <button class="gtab active" data-tab="images">
+          <i class="far fa-image"></i> Images
+          <span class="gtab-count" id="tabCountImages">0</span>
+        </button>
+        <button class="gtab" data-tab="videos">
+          <i class="fas fa-play"></i> Videos
+          <span class="gtab-count" id="tabCountVideos">0</span>
+        </button>
+      </div>
 
-    <!-- IMAGES PANEL -->
-    <div class="gallery-panel active" id="panelImages">
-      <div class="fcards-wrap reveal" id="imgFolders">
-
-        <div class="fcard" data-folder="Cinematic Portraits" data-type="image">
-          <div class="fcard-front">
-            <div class="fcard-cover">
-              <span class="fcard-cover-ph">🖼</span>
-              <div class="fcard-cover-overlay"><span>Open folder</span></div>
-            </div>
-            <div class="fcard-info">
-              <div class="fcard-label">Brand Identity</div>
-              <div class="fcard-meta"><span class="fcard-type-dot img-dot"></span><span class="fcard-count">0 images</span></div>
-            </div>
+      <!-- IMAGE FOLDERS -->
+      <div class="gallery-panel active" id="panelImages">
+        <div class="fcards-wrap reveal" id="imgFolders">
+          <div class="fcard" data-folder="Cinematic Portraits" data-type="image">
+            <div class="fcard-cover"><span class="fcard-ph">🖼</span><div class="fcard-hover-label">Open</div></div>
+            <div class="fcard-info"><div class="fcard-name">Brand Identity</div><div class="fcard-count-wrap"><span class="fcard-dot img"></span><span class="fcard-count">0 images</span></div></div>
+          </div>
+          <div class="fcard" data-folder="Arabic Visual Identity" data-type="image">
+            <div class="fcard-cover"><span class="fcard-ph">🖼</span><div class="fcard-hover-label">Open</div></div>
+            <div class="fcard-info"><div class="fcard-name">Social Media Pack</div><div class="fcard-count-wrap"><span class="fcard-dot img"></span><span class="fcard-count">0 images</span></div></div>
+          </div>
+          <div class="fcard" data-folder="AI Concept Art" data-type="image">
+            <div class="fcard-cover"><span class="fcard-ph">🖼</span><div class="fcard-hover-label">Open</div></div>
+            <div class="fcard-info"><div class="fcard-name">Event Poster</div><div class="fcard-count-wrap"><span class="fcard-dot img"></span><span class="fcard-count">0 images</span></div></div>
+          </div>
+          <div class="fcard" data-folder="Brand Campaigns" data-type="image">
+            <div class="fcard-cover"><span class="fcard-ph">🖼</span><div class="fcard-hover-label">Open</div></div>
+            <div class="fcard-info"><div class="fcard-name">AI Generated</div><div class="fcard-count-wrap"><span class="fcard-dot img"></span><span class="fcard-count">0 images</span></div></div>
+          </div>
+          <div class="fcard" data-folder="Prompt Engineering" data-type="image">
+            <div class="fcard-cover"><span class="fcard-ph">🖼</span><div class="fcard-hover-label">Open</div></div>
+            <div class="fcard-info"><div class="fcard-name">Prompt Engineering</div><div class="fcard-count-wrap"><span class="fcard-dot img"></span><span class="fcard-count">0 images</span></div></div>
+          </div>
+          <div class="fcard" data-folder="Storyboards" data-type="image">
+            <div class="fcard-cover"><span class="fcard-ph">🖼</span><div class="fcard-hover-label">Open</div></div>
+            <div class="fcard-info"><div class="fcard-name">Storyboards</div><div class="fcard-count-wrap"><span class="fcard-dot img"></span><span class="fcard-count">0 images</span></div></div>
           </div>
         </div>
+      </div>
 
-        <div class="fcard" data-folder="Arabic Visual Identity" data-type="image">
-          <div class="fcard-front">
-            <div class="fcard-cover">
-              <span class="fcard-cover-ph">🖼</span>
-              <div class="fcard-cover-overlay"><span>Open folder</span></div>
-            </div>
-            <div class="fcard-info">
-              <div class="fcard-label">Social Media Pack</div>
-              <div class="fcard-meta"><span class="fcard-type-dot img-dot"></span><span class="fcard-count">0 images</span></div>
-            </div>
+      <!-- VIDEO FOLDERS -->
+      <div class="gallery-panel" id="panelVideos">
+        <div class="fcards-wrap reveal" id="vidFolders">
+          <div class="fcard fcard-vid" data-folder="Cinematic Reels" data-type="video">
+            <div class="fcard-cover"><span class="fcard-ph">▶</span><div class="fcard-hover-label">Open</div></div>
+            <div class="fcard-info"><div class="fcard-name">Cinematic Reels</div><div class="fcard-count-wrap"><span class="fcard-dot vid"></span><span class="fcard-count">0 videos</span></div></div>
+          </div>
+          <div class="fcard fcard-vid" data-folder="Brand Films" data-type="video">
+            <div class="fcard-cover"><span class="fcard-ph">▶</span><div class="fcard-hover-label">Open</div></div>
+            <div class="fcard-info"><div class="fcard-name">Brand Films</div><div class="fcard-count-wrap"><span class="fcard-dot vid"></span><span class="fcard-count">0 videos</span></div></div>
+          </div>
+          <div class="fcard fcard-vid" data-folder="AI Video Generation" data-type="video">
+            <div class="fcard-cover"><span class="fcard-ph">▶</span><div class="fcard-hover-label">Open</div></div>
+            <div class="fcard-info"><div class="fcard-name">AI Video Generation</div><div class="fcard-count-wrap"><span class="fcard-dot vid"></span><span class="fcard-count">0 videos</span></div></div>
+          </div>
+          <div class="fcard fcard-vid" data-folder="Social Media Edits" data-type="video">
+            <div class="fcard-cover"><span class="fcard-ph">▶</span><div class="fcard-hover-label">Open</div></div>
+            <div class="fcard-info"><div class="fcard-name">Social Media Edits</div><div class="fcard-count-wrap"><span class="fcard-dot vid"></span><span class="fcard-count">0 videos</span></div></div>
+          </div>
+          <div class="fcard fcard-vid" data-folder="Storyboard Animations" data-type="video">
+            <div class="fcard-cover"><span class="fcard-ph">▶</span><div class="fcard-hover-label">Open</div></div>
+            <div class="fcard-info"><div class="fcard-name">Storyboard Animations</div><div class="fcard-count-wrap"><span class="fcard-dot vid"></span><span class="fcard-count">0 videos</span></div></div>
+          </div>
+          <div class="fcard fcard-vid" data-folder="Arabic Content" data-type="video">
+            <div class="fcard-cover"><span class="fcard-ph">▶</span><div class="fcard-hover-label">Open</div></div>
+            <div class="fcard-info"><div class="fcard-name">Arabic Content</div><div class="fcard-count-wrap"><span class="fcard-dot vid"></span><span class="fcard-count">0 videos</span></div></div>
           </div>
         </div>
-
-        <div class="fcard" data-folder="AI Concept Art" data-type="image">
-          <div class="fcard-front">
-            <div class="fcard-cover">
-              <span class="fcard-cover-ph">🖼</span>
-              <div class="fcard-cover-overlay"><span>Open folder</span></div>
-            </div>
-            <div class="fcard-info">
-              <div class="fcard-label">Event Poster</div>
-              <div class="fcard-meta"><span class="fcard-type-dot img-dot"></span><span class="fcard-count">0 images</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="fcard" data-folder="Brand Campaigns" data-type="image">
-          <div class="fcard-front">
-            <div class="fcard-cover">
-              <span class="fcard-cover-ph">🖼</span>
-              <div class="fcard-cover-overlay"><span>Open folder</span></div>
-            </div>
-            <div class="fcard-info">
-              <div class="fcard-label">AI Generated</div>
-              <div class="fcard-meta"><span class="fcard-type-dot img-dot"></span><span class="fcard-count">0 images</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="fcard" data-folder="Prompt Engineering" data-type="image">
-          <div class="fcard-front">
-            <div class="fcard-cover">
-              <span class="fcard-cover-ph">🖼</span>
-              <div class="fcard-cover-overlay"><span>Open folder</span></div>
-            </div>
-            <div class="fcard-info">
-              <div class="fcard-label">Prompt Engineering</div>
-              <div class="fcard-meta"><span class="fcard-type-dot img-dot"></span><span class="fcard-count">0 images</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="fcard" data-folder="Storyboards" data-type="image">
-          <div class="fcard-front">
-            <div class="fcard-cover">
-              <span class="fcard-cover-ph">🖼</span>
-              <div class="fcard-cover-overlay"><span>Open folder</span></div>
-            </div>
-            <div class="fcard-info">
-              <div class="fcard-label">Storyboards</div>
-              <div class="fcard-meta"><span class="fcard-type-dot img-dot"></span><span class="fcard-count">0 images</span></div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
 
-    <!-- VIDEOS PANEL -->
-    <div class="gallery-panel" id="panelVideos">
-      <div class="fcards-wrap reveal" id="vidFolders">
-
-        <div class="fcard fcard-vid" data-folder="Cinematic Reels" data-type="video">
-          <div class="fcard-front">
-            <div class="fcard-cover">
-              <span class="fcard-cover-ph">▶</span>
-              <div class="fcard-cover-overlay"><span>Open folder</span></div>
-            </div>
-            <div class="fcard-info">
-              <div class="fcard-label">Cinematic Reels</div>
-              <div class="fcard-meta"><span class="fcard-type-dot vid-dot"></span><span class="fcard-count">0 videos</span></div>
-            </div>
+    <!-- Gallery Overlay -->
+    <div class="gallery-overlay" id="galleryOverlay">
+      <div class="go-inner">
+        <div class="go-header">
+          <div class="go-title-wrap">
+            <span class="go-title" id="galleryOverlayTitle"></span>
+            <span class="go-badge" id="galleryOverlayBadge"></span>
           </div>
-        </div>
-
-        <div class="fcard fcard-vid" data-folder="Brand Films" data-type="video">
-          <div class="fcard-front">
-            <div class="fcard-cover">
-              <span class="fcard-cover-ph">▶</span>
-              <div class="fcard-cover-overlay"><span>Open folder</span></div>
-            </div>
-            <div class="fcard-info">
-              <div class="fcard-label">Brand Films</div>
-              <div class="fcard-meta"><span class="fcard-type-dot vid-dot"></span><span class="fcard-count">0 videos</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="fcard fcard-vid" data-folder="AI Video Generation" data-type="video">
-          <div class="fcard-front">
-            <div class="fcard-cover">
-              <span class="fcard-cover-ph">▶</span>
-              <div class="fcard-cover-overlay"><span>Open folder</span></div>
-            </div>
-            <div class="fcard-info">
-              <div class="fcard-label">AI Video Generation</div>
-              <div class="fcard-meta"><span class="fcard-type-dot vid-dot"></span><span class="fcard-count">0 videos</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="fcard fcard-vid" data-folder="Social Media Edits" data-type="video">
-          <div class="fcard-front">
-            <div class="fcard-cover">
-              <span class="fcard-cover-ph">▶</span>
-              <div class="fcard-cover-overlay"><span>Open folder</span></div>
-            </div>
-            <div class="fcard-info">
-              <div class="fcard-label">Social Media Edits</div>
-              <div class="fcard-meta"><span class="fcard-type-dot vid-dot"></span><span class="fcard-count">0 videos</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="fcard fcard-vid" data-folder="Storyboard Animations" data-type="video">
-          <div class="fcard-front">
-            <div class="fcard-cover">
-              <span class="fcard-cover-ph">▶</span>
-              <div class="fcard-cover-overlay"><span>Open folder</span></div>
-            </div>
-            <div class="fcard-info">
-              <div class="fcard-label">Storyboard Animations</div>
-              <div class="fcard-meta"><span class="fcard-type-dot vid-dot"></span><span class="fcard-count">0 videos</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="fcard fcard-vid" data-folder="Arabic Content" data-type="video">
-          <div class="fcard-front">
-            <div class="fcard-cover">
-              <span class="fcard-cover-ph">▶</span>
-              <div class="fcard-cover-overlay"><span>Open folder</span></div>
-            </div>
-            <div class="fcard-info">
-              <div class="fcard-label">Arabic Content</div>
-              <div class="fcard-meta"><span class="fcard-type-dot vid-dot"></span><span class="fcard-count">0 videos</span></div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- UNIFIED OVERLAY -->
-    <div class="fcard-overlay" id="galleryOverlay">
-      <div class="fcard-overlay-inner">
-        <div class="fcard-overlay-header">
-          <div class="overlay-title-wrap">
-            <span class="fcard-overlay-title" id="galleryOverlayTitle"></span>
-            <span class="overlay-type-badge" id="galleryOverlayBadge"></span>
-          </div>
-          <button class="fcard-overlay-close" id="galleryOverlayClose">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          <button class="go-close" id="galleryOverlayClose">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </button>
         </div>
-        <div class="overlay-empty" id="galleryEmpty">
-          <div class="overlay-empty-icon">📂</div>
-          <p class="overlay-empty-text">This folder is empty</p>
+        <div class="go-empty" id="galleryEmpty">
+          <span>📂</span><p>This folder is empty</p>
         </div>
-        <div class="fcard-overlay-grid" id="galleryOverlayGrid"></div>
+        <div class="go-grid" id="galleryOverlayGrid"></div>
       </div>
     </div>
 
-
-    <!-- LIGHTBOX -->
+    <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
-      <button class="lb-close" id="lbClose">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-      <button class="lb-prev" id="lbPrev">&#8249;</button>
-      <button class="lb-next" id="lbNext">&#8250;</button>
-      <div class="lb-img-wrap"><img id="lbImg" src="" alt="" /></div>
-      <div class="lb-caption" id="lbCaption"></div>
-    </div>
-
-    <div class="upload-toast" id="uploadToast"></div>
-
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="contact-split reveal">
-      <div class="contact-left">
-        <div class="section-tag" style="text-align:left;margin-bottom:16px">// Contact</div>
-        <h2 class="section-title" style="text-align:left">Let's work<br><span>together.</span></h2>
-        <p class="contact-tagline">Have a project in mind?<br>Let's make it happen. Reach out directly — no forms, no friction.</p>
-        <a href="your-cv.pdf" download class="btn-primary" style="margin-top:36px;display:inline-block">Download CV ↓</a>
-      </div>
-      <div class="contact-right">
-        <a href="mailto:your@email.com" class="crow">
-          <div class="crow-icon">✉</div>
-          <div class="crow-body">
-            <div class="crow-label">Email</div>
-            <div class="crow-value">your@email.com</div>
-          </div>
-          <div class="crow-arrow">→</div>
-        </a>
-        <a href="https://wa.me/201000000000" class="crow" target="_blank">
-          <div class="crow-icon">💬</div>
-          <div class="crow-body">
-            <div class="crow-label">WhatsApp</div>
-            <div class="crow-value">+20 100 000 0000</div>
-          </div>
-          <div class="crow-arrow">→</div>
-        </a>
-        <a href="https://linkedin.com/in/your-profile" class="crow" target="_blank">
-          <div class="crow-icon">in</div>
-          <div class="crow-body">
-            <div class="crow-label">LinkedIn</div>
-            <div class="crow-value">linkedin.com/in/your-profile</div>
-          </div>
-          <div class="crow-arrow">→</div>
-        </a>
-      </div>
+      <button class="lb-close" id="lbClose">✕</button>
+      <button class="lb-prev" id="lbPrev">‹</button>
+      <button class="lb-next" id="lbNext">›</button>
+      <div class="lb-wrap"><img id="lbImg" src="" alt="" /></div>
+      <div class="lb-cap" id="lbCaption"></div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+
+  <!-- ══ CONTACT ═══════════════════════════════════════ -->
+  <section id="contact" class="section-contact">
+    <div class="container">
+      <div class="contact-inner reveal">
+        <div class="contact-left">
+          <div class="section-label" style="text-align:left">// 05 — Contact</div>
+          <h2 class="section-heading" style="text-align:left;margin-bottom:20px">Let's create<br><span>something</span><br>remarkable.</h2>
+          <p class="contact-tagline">Have a project in mind? Let's make it happen.<br>Reach out directly — no friction.</p>
+          <a href="your-cv.pdf" download class="btn-primary" style="margin-top:40px">
+            <span>Download CV</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          </a>
+        </div>
+        <div class="contact-right">
+          <a href="/cdn-cgi/l/email-protection#760f19030436131b171f1a5815191b" class="contact-card">
+            <div class="cc-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="cc-body">
+              <div class="cc-label">Email</div>
+              <div class="cc-value"><span class="__cf_email__" data-cfemail="324b5d474072575f535b5e1c515d5f">[email&#160;protected]</span></div>
+            </div>
+            <div class="cc-arrow">→</div>
+          </a>
+          <a href="https://wa.me/201000000000" class="contact-card" target="_blank">
+            <div class="cc-icon" style="color:#25d366">
+              <i class="fab fa-whatsapp" style="font-size:22px"></i>
+            </div>
+            <div class="cc-body">
+              <div class="cc-label">WhatsApp</div>
+              <div class="cc-value">+20 100 000 0000</div>
+            </div>
+            <div class="cc-arrow">→</div>
+          </a>
+          <a href="https://linkedin.com/in/your-profile" class="contact-card" target="_blank">
+            <div class="cc-icon" style="color:#0a66c2">
+              <i class="fab fa-linkedin-in" style="font-size:22px"></i>
+            </div>
+            <div class="cc-body">
+              <div class="cc-label">LinkedIn</div>
+              <div class="cc-value">linkedin.com/in/your-profile</div>
+            </div>
+            <div class="cc-arrow">→</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ FOOTER ════════════════════════════════════════ -->
   <footer>
-    <div class="footer-social-wrap">
-      <div class="footer-social-label">Follow my work</div>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">[SE]</div>
+        <p class="footer-tagline">CPA · Design · Video · AI · IT</p>
+      </div>
       <div class="footer-social">
         <a href="#" class="fsoc" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         <a href="#" class="fsoc" title="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="#" class="fsoc" title="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="#" class="fsoc" title="TikTok"><i class="fab fa-tiktok"></i></a>
-        <a href="#" class="fsoc" title="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="fsoc" title="X"><i class="fab fa-x-twitter"></i></a>
       </div>
-    </div>
-    <div class="footer-copy">All rights reserved © 2026 | Designed and developed by Mohamed Salah</div>
-    <div class="footer-right">
-      <div class="footer-name">SAMIR ELNAGDI</div>
-      <div class="footer-tag">CPA · Graphic Design · Video Editing · IT · AI</div>
+      <div class="footer-right">
+        <p class="footer-copy">© 2026 Samir Elnagdi. All rights reserved.</p>
+        <p class="footer-credit">Designed &amp; developed by Mohamed Salah</p>
+      </div>
     </div>
   </footer>
 
-<script src="script.js"></script>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
-
-
-
