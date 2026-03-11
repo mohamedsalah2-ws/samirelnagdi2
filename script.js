@@ -1,21 +1,7 @@
 /* ============================================================
    SAMIR ELNAGDI PORTFOLIO — script.js
-   ============================================================
+   ============================================================*/
 
-   ██████████████████████████████████████████████████████████
-   ██                                                      ██
-   ██  HOW TO ADD YOUR MEDIA                               ██
-   ██                                                      ██
-   ██  Edit the GALLERY_DATA object below.                 ██
-   ██                                                      ██
-   ██  For IMAGES:                                         ██
-   ██  { src: "images/gallery/photo.jpg", caption: "..." } ██
-   ██                                                      ██
-   ██  For VIDEOS:                                         ██
-   ██  { src: "videos/gallery/clip.mp4",  caption: "..." } ██
-   ██                                                      ██
-   ██████████████████████████████████████████████████████████
-*/
 
 /* ════════════════════════════════════════════════════════
    ★  GALLERY DATA — EDIT THIS TO ADD YOUR MEDIA  ★
@@ -471,3 +457,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
