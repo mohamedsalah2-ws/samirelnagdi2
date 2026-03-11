@@ -1,7 +1,7 @@
 /* ============================================================
    SAMIR ELNAGDI PORTFOLIO — script.js
-   ============================================================*/
-
+   ============================================================
+*/
 
 /* ════════════════════════════════════════════════════════
    ★  GALLERY DATA — EDIT THIS TO ADD YOUR MEDIA  ★
@@ -430,11 +430,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initProjectVideos();
   initTilt();
 
-  // Overlay & Lightbox events
+  // Overlay — close on button click OR anywhere on overlay
   document.getElementById('galleryOverlayClose')?.addEventListener('click', closeOverlay);
-  document.getElementById('galleryOverlay')?.addEventListener('click', e => {
-    if (e.target.id === 'galleryOverlay') closeOverlay();
-  });
+  document.getElementById('galleryOverlay')?.addEventListener('click', closeOverlay);
 
   document.getElementById('lbClose')?.addEventListener('click', closeLightbox);
   document.getElementById('lightbox')?.addEventListener('click', e => {
@@ -457,4 +455,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
